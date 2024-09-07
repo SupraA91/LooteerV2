@@ -38,7 +38,6 @@ local settings = {
    legendary_wand_ga_count = nil,
    --2h
    legendary_2h_mace_ga_count = nil,
-   legendary_2h_mace_ga_count = nil,
    legendary_2h_sword_ga_count = nil,
    legendary_2h_axe_ga_count = nil,
    legendary_2h_polearm_ga_count = nil,
