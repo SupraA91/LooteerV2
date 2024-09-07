@@ -29,6 +29,23 @@ local settings = {
    legendary_chest_ga_count = nil,
    legendary_gloves_ga_count = nil,
    legendary_boots_ga_count = nil,
+   --wepeons
+   --1h
+   legendary_1h_mace_ga_count = nil,
+   legendary_1h_sword_ga_count = nil,
+   legendary_1h_axe_ga_count = nil,
+   legendary_dagger_ga_count = nil,
+   legendary_wand_ga_count = nil,
+   --2h
+   legendary_2h_mace_ga_count = nil,
+   legendary_2h_mace_ga_count = nil,
+   legendary_2h_sword_ga_count = nil,
+   legendary_2h_axe_ga_count = nil,
+   legendary_2h_polearm_ga_count = nil,
+   legendary_staff_ga_count = nil,
+   legendary_bow_ga_count = nil,
+   legendary_crossbow_ga_count = nil,
+
    draw_wanted_items = false
 }
 
@@ -58,7 +75,24 @@ function Settings.update()
       legendary_gloves_ga_count = gui.elements.affix_settings.legendary_gloves_slider:get(),
       legendary_pants_ga_count = gui.elements.affix_settings.legendary_pants_slider:get(),
       legendary_boots_ga_count = gui.elements.affix_settings.legendary_boots_slider:get(),
+      
+      --Wepeons Settings
+         --1h
+         legendary_1h_mace_ga_count = gui.elements.affix_settings.legendary_1h_mace_slider:get(),
+         legendary_1h_sword_ga_count = gui.elements.affix_settings.legendary_1h_sword_slider:get(),
+         legendary_1h_axe_ga_count = gui.elements.affix_settings.legendary_1h_axe_slider:get(),
+         legendary_dagger_ga_count = gui.elements.affix_settings.legendary_dagger_slider:get(),
+         legendary_wand_ga_count = gui.elements.affix_settings.legendary_wand_slider:get(),
+         --2h
+         legendary_2h_mace_ga_count = gui.elements.affix_settings.legendary_2h_mace_slider:get(),
+         legendary_2h_sword_ga_count = gui.elements.affix_settings.legendary_2h_sword_slider:get(),
+         legendary_2h_axe_ga_count = gui.elements.affix_settings.legendary_2h_axe_slider:get(),
+         legendary_2h_polearm_ga_count = gui.elements.affix_settings.legendary_2h_polearm_slider:get(),
+         legendary_staff_ga_count = gui.elements.affix_settings.legendary_staff_slider:get(),
+         legendary_bow_ga_count = gui.elements.affix_settings.legendary_bow_slider:get(),
+         legendary_crossbow_ga_count = gui.elements.affix_settings.legendary_crossbow_slider:get(),
 
+      
       -- Item Types
       quest_items = gui.elements.item_types.quest_items_toggle:get(),
       crafting_items = gui.elements.item_types.crafting_items_toggle:get(),

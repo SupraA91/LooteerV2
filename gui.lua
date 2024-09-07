@@ -19,18 +19,40 @@ gui.elements = {
       tree = tree_node:new(1),
       greater_affix_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_greater_affix_slider")),
       unique_greater_affix_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_unique_greater_affix_slider")),
-      legendary_amulet_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_amulet_slider")),
-      unique_amulet_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_unique_amulet_slider")),
       innerTree = tree_node:new(2),
       custom_toggle = checkbox:new(false, get_hash(plugin_label .. "_costum_toggle")),
       armorsTree = tree_node:new(3),
       jewerlyTree = tree_node:new(4),
-      legendary_ring_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_ring_slider")),
-      legendary_helm_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_helm_slider")),
-      legendary_chest_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_chest_slider")),
-      legendary_gloves_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_gloves_slider")),
-      legendary_pants_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_pants_slider")),
-      legendary_boots_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_boots_slider")),
+      wepeonsTree = tree_node:new(5),
+      oneHandedTree = tree_node:new(6),
+      twoHandedTree = tree_node:new(7),
+      --armors
+         legendary_helm_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_helm_slider")),
+         legendary_chest_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_chest_slider")),
+         legendary_gloves_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_gloves_slider")),
+         legendary_pants_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_pants_slider")),
+         legendary_boots_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_boots_slider")),
+      --jewerly
+         legendary_amulet_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_amulet_slider")),
+         unique_amulet_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_unique_amulet_slider")),
+         legendary_ring_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_ring_slider")),
+      --wepeons
+         --1h
+         legendary_1h_mace_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_1h_mace_slider")),
+         legendary_1h_sword_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_1h_sword_slider")),
+         legendary_1h_axe_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_1h_axe_slider")),
+         legendary_dagger_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_dagger_slider")),
+         legendary_wand_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_wand_slider")),
+         --2h
+         legendary_2h_mace_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_2h_mace_slider")),
+         legendary_2h_sword_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_2h_sword_slider")),
+         legendary_2h_axe_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_2h_axe_slider")),
+         legendary_2h_polearm_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_2h_polearm_slider")),
+         legendary_staff_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_staff_slider")),
+         legendary_bow_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_bow_slider")),
+         legendary_crossbow_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_crossbow_slider")),
+         
+      --ubers
       uber_unique_greater_affix_slider = slider_int:new(0, 3, 0,get_hash(plugin_label .. "_uber_unique_greater_affix_slider")),
    },
 
@@ -105,6 +127,38 @@ function gui:render()
                "Minimum GA's to consider picking up unique amulets")
                gui.elements.affix_settings.legendary_ring_slider:render("Legendary Ring GA Count",
                "Minimum GA's to consider picking up legendary rings")
+            end
+            if gui.elements.affix_settings.wepeonsTree:push("Wepeons Settings") then
+               if gui.elements.affix_settings.oneHandedTree:push("1Handed") then
+
+                     gui.elements.affix_settings.legendary_1h_mace_slider:render("Legendary 1H Mace GA Count",
+                     "Minimum GA's to consider picking up legendary 1H maces")
+                     gui.elements.affix_settings.legendary_1h_axe_slider:render("Legendary 1H Axe GA Count",
+                     "Minimum GA's to consider picking up legendary 1H axes")
+                     gui.elements.affix_settings.legendary_1h_sword_slider:render("Legendary 1H Sword GA Count",
+                     "Minimum GA's to consider picking up legendary 1H swords")
+                     gui.elements.affix_settings.legendary_dagger_slider:render("Legendary Dagger GA Count",
+                     "Minimum GA's to consider picking up legendary Dagger")
+                     gui.elements.affix_settings.legendary_wand_slider:render("Legendary wand GA Count",
+                     "Minimum GA's to consider picking up legendary wand")
+                  end
+                  if gui.elements.affix_settings.twoHandedTree:push("2Handed") then
+                     gui.elements.affix_settings.legendary_2h_mace_slider:render("Legendary 2H Mace GA Count",
+                     "Minimum GA's to consider picking up legendary 2H maces")
+                     gui.elements.affix_settings.legendary_2h_axe_slider:render("Legendary 2H Axe GA Count",
+                     "Minimum GA's to consider picking up legendary 2H axes")
+                     gui.elements.affix_settings.legendary_2h_sword_slider:render("Legendary 2H Sword GA Count",
+                     "Minimum GA's to consider picking up legendary 2H swords")
+                     gui.elements.affix_settings.legendary_2h_polearm_slider:render("Legendary 2H Polearm GA Count",
+                     "Minimum GA's to consider picking up legendary 2H polearms")
+                     gui.elements.affix_settings.legendary_staff_slider:render("Legendary Staff GA Count",
+                     "Minimum GA's to consider picking up legendary staffs")
+                     gui.elements.affix_settings.legendary_bow_slider:render("Legendary Bow GA Count",
+                     "Minimum GA's to consider picking up legendary bows")
+                     gui.elements.affix_settings.legendary_crossbow_slider:render("Legendary Crossbow GA Count",
+                     "Minimum GA's to consider picking up legendary crossbows")
+               
+               end
             end
          end
       gui.elements.affix_settings.tree:pop()

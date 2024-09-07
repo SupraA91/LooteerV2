@@ -35,44 +35,91 @@ function ItemManager.check_is_cinders(item)
    return ItemManager.check_item_type(item, "cinders")
 end
 
+--Jewerly
 function ItemManager.is_legendary_amulet(item)
    local item_info = item:get_item_info()
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Amulet")
 end
-
 function ItemManager.is_unique_amulet(item)
    local item_info = item:get_item_info()
    return item_info:get_rarity() == 6 and item_info:get_skin_name():find("Amulet")
 end
-
 function ItemManager.is_legendary_ring(item)
    local item_info = item:get_item_info()
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Ring")
 end
+--Armors
 function ItemManager.is_legendary_helm(item)
    local item_info = item:get_item_info()
-   -- return item_info:get_rarity() == 5 and item_info:get_skin_name():find("HLM_sets")
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("HLM")
 end
 function ItemManager.is_legendary_chest(item)
    local item_info = item:get_item_info()
-   -- return item_info:get_rarity() == 5 and item_info:get_skin_name():find("TRS_sets")
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("TRS")
 end
 function ItemManager.is_legendary_gloves(item)
    local item_info = item:get_item_info()
-   -- return item_info:get_rarity() == 5 and item_info:get_skin_name():find("GLV_sets")
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("GLV")
 end
 function ItemManager.is_legendary_pants(item)
    local item_info = item:get_item_info()
-   -- return item_info:get_rarity() == 5 and item_info:get_skin_name():find("LEG_sets")
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("LEG")
 end
 function ItemManager.is_legendary_boots(item)
    local item_info = item:get_item_info()
-   -- return item_info:get_rarity() == 5 and item_info:get_skin_name():find("BTS_sets")
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("BTS")
+end
+
+--1Handed Wepeons
+function ItemManager.is_legendary_1h_mace(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("mace")
+end
+function ItemManager.is_legendary_1h_axe(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("axe")
+end
+function ItemManager.is_legendary_1h_sword(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("sword")
+end
+function ItemManager.is_legendary_dagger(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("dagger")
+end
+function ItemManager.is_legendary_wand(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("wand")
+end
+
+--2H wepeons
+function ItemManager.is_legendary_2h_mace(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Mace")
+end
+function ItemManager.is_legendary_2h_axe(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Axe")
+end
+function ItemManager.is_legendary_2h_sword(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Sword")
+end
+function ItemManager.is_legendary_2h_polearm(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Polearm")
+end
+function ItemManager.is_legendary_staff(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Staff")
+end
+function ItemManager.is_legendary_bow(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Bow")
+end
+function ItemManager.is_legendary_crossbow(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Crossbow")
 end
 
 -- Specific functions using the generic check
@@ -174,13 +221,26 @@ function ItemManager.check_want_item(item, ignore_distance)
                ItemManager.is_legendary_chest(item) or
                ItemManager.is_legendary_gloves(item) or
                ItemManager.is_legendary_pants(item) or
-               ItemManager.is_legendary_boots(item) then
-               return true         -- Second 'if' statement, true block
+               ItemManager.is_legendary_boots(item) or
+               ItemManager.is_legendary_1h_mace(item) or
+               ItemManager.is_legendary_1h_axe(item) or
+               ItemManager.is_legendary_1h_sword(item) or
+               ItemManager.is_legendary_dagger(item) or
+               ItemManager.is_legendary_wand(item) or
+               ItemManager.is_legendary_2h_axe(item) or
+               ItemManager.is_legendary_2h_mace(item) or
+               ItemManager.is_legendary_2h_sword(item) or
+               ItemManager.is_legendary_2h_polearm(item) or
+               ItemManager.is_legendary_staff(item) or
+               ItemManager.is_legendary_bow(item) or
+               ItemManager.is_legendary_crossbow(item) 
+               then
+               return true      
             else 
-               return false        -- 'else' block for second 'if'
+               return false    
             end 
             return false  
-         end                -- End of the second 'if-else'                     -- End of the first 'if' (forceSettings check)
+         end                
       end    
 
       -- Check each item type explicitly and set the required GA count accordingly
@@ -208,6 +268,42 @@ function ItemManager.check_want_item(item, ignore_distance)
       elseif ItemManager.is_legendary_boots(item) and Settings.get().custom_toggle == true then
          required_ga_count = settings.legendary_boots_ga_count
          foundOn = 'boots'
+      elseif ItemManager.is_legendary_1h_mace(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_1h_mace_ga_count
+         foundOn = '1hMace'
+      elseif ItemManager.is_legendary_1h_axe(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_1h_axe_ga_count
+         foundOn = '1hAxe'
+      elseif ItemManager.is_legendary_1h_sword(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_1h_sword_ga_count
+         foundOn = '1hSword'
+      elseif ItemManager.is_legendary_dagger(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_dagger_ga_count
+         foundOn = 'dagger'
+      elseif ItemManager.is_legendary_wand(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_wand_ga_count
+         foundOn = 'wand'
+      elseif ItemManager.is_legendary_2h_axe(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_2h_axe_ga_count
+         foundOn = '2hAxe'
+      elseif ItemManager.is_legendary_2h_mace(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_2h_mace_ga_count
+         foundOn = '2hMace'
+      elseif ItemManager.is_legendary_2h_sword(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_2h_sword_ga_count
+         foundOn = '2hSword'
+      elseif ItemManager.is_legendary_2h_polearm(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_2h_polearm_ga_count
+         foundOn = '2hPolearm'
+      elseif ItemManager.is_legendary_staff(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_staff_ga_count
+         foundOn = 'staff'
+      elseif ItemManager.is_legendary_bow(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_bow_ga_count
+         foundOn = 'bow'
+      elseif ItemManager.is_legendary_crossbow(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_crossbow_ga_count
+         foundOn = 'crossbow'
       else
          -- Fallback to general settings for rarity == 5 or unique/uber items
          if (rarity == 5 and  Settings.get().custom_toggle == false) then
