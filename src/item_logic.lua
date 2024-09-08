@@ -42,7 +42,7 @@ function ItemLogic.is_legendary_amulet(item)
  end
  function ItemLogic.is_unique_gloves(item)
     local item_info = item:get_item_info()
-    return item_info:get_rarity() == 6 and item_info:get_skin_name():find("GLV")
+    return item_info:get_rarity() == 6 and (item_info:get_skin_name():find("GLV") or item_info:get_skin_name():find("Gloves"))
  end
  function ItemLogic.is_legendary_pants(item)
     local item_info = item:get_item_info()
