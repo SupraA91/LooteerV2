@@ -316,7 +316,7 @@ function ItemManager.check_want_item(item, ignore_distance)
          -- Fallback to general settings for rarity == 5 or unique/uber items
          if (rarity == 5 and  Settings.get().custom_toggle == false) then
             required_ga_count = settings.ga_count
-         elseif (rarity == 6 and Settings.get().custom_toggle == false) then
+         elseif (rarity == 6 ) then --and Settings.get().custom_toggle == false
             required_ga_count = settings.unique_ga_count
          elseif(rarity == 8) then
             required_ga_count = CustomItems.ubers[id] and settings.uber_unique_ga_count or settings.unique_ga_count
