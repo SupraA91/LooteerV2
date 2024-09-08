@@ -22,14 +22,22 @@ local settings = {
    advanced_elixirs = false,
    sigils = false,
    event_items = true,
+   --jewerly
    legendary_amulet_ga_count = nil,
    legendary_ring_ga_count = nil,
    unique_amulet_ga_count = nil,
    unique_ring_ga_count = nil,
+   --armors
    legendary_helm_ga_count = nil,
    legendary_chest_ga_count = nil,
    legendary_gloves_ga_count = nil,
+   legendary_pants_ga_count = nil,
    legendary_boots_ga_count = nil,
+   unique_helm_ga_count = nil,
+   unique_chest_ga_count = nil,
+   unique_gloves_ga_count = nil,
+   unique_pants_ga_count = nil,
+   unique_boots_ga_count = nil,
    --wepeons
    --1h
    legendary_1h_mace_ga_count = nil,
@@ -37,6 +45,11 @@ local settings = {
    legendary_1h_axe_ga_count = nil,
    legendary_dagger_ga_count = nil,
    legendary_wand_ga_count = nil,
+   unique_1h_mace_ga_count = nil,
+   unique_1h_sword_ga_count = nil,
+   unique_1h_axe_ga_count = nil,
+   unique_dagger_ga_count = nil,
+   unique_wand_ga_count = nil,
    --2h
    legendary_2h_mace_ga_count = nil,
    legendary_2h_sword_ga_count = nil,
@@ -45,6 +58,13 @@ local settings = {
    legendary_staff_ga_count = nil,
    legendary_bow_ga_count = nil,
    legendary_crossbow_ga_count = nil,
+   unique_2h_mace_ga_count = nil,
+   unique_2h_sword_ga_count = nil,
+   unique_2h_axe_ga_count = nil,
+   unique_2h_polearm_ga_count = nil,
+   unique_staff_ga_count = nil,
+   unique_bow_ga_count = nil,
+   unique_crossbow_ga_count = nil,
 
    draw_wanted_items = false
 }
@@ -76,6 +96,11 @@ function Settings.update()
       legendary_gloves_ga_count = gui.elements.affix_settings.legendary_gloves_slider:get(),
       legendary_pants_ga_count = gui.elements.affix_settings.legendary_pants_slider:get(),
       legendary_boots_ga_count = gui.elements.affix_settings.legendary_boots_slider:get(),
+      unique_helm_ga_count = gui.elements.affix_settings.unique_helm_slider:get(),
+      unique_chest_ga_count = gui.elements.affix_settings.unique_chest_slider:get(),
+      unique_gloves_ga_count = gui.elements.affix_settings.unique_gloves_slider:get(),
+      unique_pants_ga_count = gui.elements.affix_settings.unique_pants_slider:get(),
+      unique_boots_ga_count = gui.elements.affix_settings.unique_boots_slider:get(),
       
       --Wepeons Settings
          --1h
@@ -84,6 +109,11 @@ function Settings.update()
          legendary_1h_axe_ga_count = gui.elements.affix_settings.legendary_1h_axe_slider:get(),
          legendary_dagger_ga_count = gui.elements.affix_settings.legendary_dagger_slider:get(),
          legendary_wand_ga_count = gui.elements.affix_settings.legendary_wand_slider:get(),
+         unique_1h_mace_ga_count = gui.elements.affix_settings.unique_1h_mace_slider:get(),
+         unique_1h_sword_ga_count = gui.elements.affix_settings.unique_1h_sword_slider:get(),
+         unique_1h_axe_ga_count = gui.elements.affix_settings.unique_1h_axe_slider:get(),
+         unique_dagger_ga_count = gui.elements.affix_settings.unique_dagger_slider:get(),
+         unique_wand_ga_count = gui.elements.affix_settings.unique_wand_slider:get(),
          --2h
          legendary_2h_mace_ga_count = gui.elements.affix_settings.legendary_2h_mace_slider:get(),
          legendary_2h_sword_ga_count = gui.elements.affix_settings.legendary_2h_sword_slider:get(),
@@ -92,6 +122,13 @@ function Settings.update()
          legendary_staff_ga_count = gui.elements.affix_settings.legendary_staff_slider:get(),
          legendary_bow_ga_count = gui.elements.affix_settings.legendary_bow_slider:get(),
          legendary_crossbow_ga_count = gui.elements.affix_settings.legendary_crossbow_slider:get(),
+         unique_2h_mace_ga_count = gui.elements.affix_settings.unique_2h_mace_slider:get(),
+         unique_2h_sword_ga_count = gui.elements.affix_settings.unique_2h_sword_slider:get(),
+         unique_2h_axe_ga_count = gui.elements.affix_settings.unique_2h_axe_slider:get(),
+         unique_2h_polearm_ga_count = gui.elements.affix_settings.unique_2h_polearm_slider:get(),
+         unique_staff_ga_count = gui.elements.affix_settings.unique_staff_slider:get(),
+         unique_bow_ga_count = gui.elements.affix_settings.unique_bow_slider:get(),
+         unique_crossbow_ga_count = gui.elements.affix_settings.unique_crossbow_slider:get(),
 
       
       -- Item Types
