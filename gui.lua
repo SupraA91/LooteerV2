@@ -36,6 +36,7 @@ gui.elements = {
          legendary_amulet_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_amulet_slider")),
          unique_amulet_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_unique_amulet_slider")),
          legendary_ring_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_ring_slider")),
+         unique_ring_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_unique_ring_slider")),
       --wepeons
          --1h
          legendary_1h_mace_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_1h_mace_slider")),
@@ -127,6 +128,8 @@ function gui:render()
                "Minimum GA's to consider picking up unique amulets")
                gui.elements.affix_settings.legendary_ring_slider:render("Legendary Ring GA Count",
                "Minimum GA's to consider picking up legendary rings")
+               gui.elements.affix_settings.unique_ring_slider:render("Unique Ring GA Count",
+               "Minimum GA's to consider picking up unique rings")
             end
             if gui.elements.affix_settings.wepeonsTree:push("Wepeons Settings") then
                if gui.elements.affix_settings.oneHandedTree:push("1Handed") then

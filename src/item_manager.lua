@@ -44,6 +44,10 @@ function ItemManager.is_unique_amulet(item)
    local item_info = item:get_item_info()
    return item_info:get_rarity() == 6 and (item_info:get_skin_name():find("Amulet") or item_info:get_skin_name():find("Necklace"))
 end
+function ItemManager.is_unique_ring(item)
+   local item_info = item:get_item_info()
+   return item_info:get_rarity() == 6 and (item_info:get_skin_name():find("Ring"))
+end
 function ItemManager.is_legendary_ring(item)
    local item_info = item:get_item_info()
    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("Ring")
@@ -217,6 +221,7 @@ function ItemManager.check_want_item(item, ignore_distance)
             if ItemManager.is_legendary_amulet(item) or
                ItemManager.is_legendary_ring(item) or
                ItemManager.is_unique_amulet(item) or
+               ItemManager.is_unique_ring(item) or
                ItemManager.is_legendary_helm(item) or
                ItemManager.is_legendary_chest(item) or
                ItemManager.is_legendary_gloves(item) or
@@ -253,6 +258,9 @@ function ItemManager.check_want_item(item, ignore_distance)
       elseif ItemManager.is_unique_amulet(item) and Settings.get().custom_toggle == true then
          required_ga_count = settings.unique_amulet_ga_count
          foundOn = 'uniqueAmulet'
+      elseif ItemManager.is_unique_ring(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.unique_ring_ga_count
+         foundOn = 'uniqueRing'
       elseif ItemManager.is_legendary_helm(item) and Settings.get().custom_toggle == true then
          required_ga_count = settings.legendary_helm_ga_count
          foundOn = 'helm'

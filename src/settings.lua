@@ -25,6 +25,7 @@ local settings = {
    legendary_amulet_ga_count = nil,
    legendary_ring_ga_count = nil,
    unique_amulet_ga_count = nil,
+   unique_ring_ga_count = nil,
    legendary_helm_ga_count = nil,
    legendary_chest_ga_count = nil,
    legendary_gloves_ga_count = nil,
@@ -65,6 +66,7 @@ function Settings.update()
       uber_unique_ga_count = gui.elements.affix_settings.uber_unique_greater_affix_slider:get(),
       legendary_amulet_ga_count = gui.elements.affix_settings.legendary_amulet_slider:get(),
       unique_amulet_ga_count = gui.elements.affix_settings.unique_amulet_slider:get(),
+      unique_ring_ga_count = gui.elements.affix_settings.unique_ring_slider:get(),
       legendary_ring_ga_count = gui.elements.affix_settings.legendary_ring_slider:get(),
       
       -- Armors Settings
