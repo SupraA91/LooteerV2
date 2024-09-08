@@ -321,7 +321,7 @@ function ItemManager.check_want_item(item, ignore_distance)
       if greater_affix_count < required_ga_count then
          return false
       end
-      console.print(rarity)
+      -- console.print(rarity)
    end
    return true
 end
