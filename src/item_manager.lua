@@ -42,7 +42,7 @@ function ItemManager.is_legendary_amulet(item)
 end
 function ItemManager.is_unique_amulet(item)
    local item_info = item:get_item_info()
-   return item_info:get_rarity() == 6 and (item_info:get_skin_name():find("Amulet") or item_info:get_skin_name():find("flippy_"))
+   return item_info:get_rarity() == 6 and (item_info:get_skin_name():find("Amulet") or item_info:get_skin_name():find("Necklace"))
 end
 function ItemManager.is_legendary_ring(item)
    local item_info = item:get_item_info()
@@ -212,7 +212,7 @@ function ItemManager.check_want_item(item, ignore_distance)
       local foundOn = ''
 
       function ItemManager.checkIfCustom(item)
-         console.print('customToggle')
+         -- console.print('customToggle')
          if (Settings.get().custom_toggle == true) then
             if ItemManager.is_legendary_amulet(item) or
                ItemManager.is_legendary_ring(item) or
@@ -312,16 +312,19 @@ function ItemManager.check_want_item(item, ignore_distance)
             required_ga_count = settings.unique_ga_count
          elseif(rarity == 8) then
             required_ga_count = CustomItems.ubers[id] and settings.uber_unique_ga_count or settings.unique_ga_count
-         else required_ga_count = 0
+         else required_ga_count = 4
          end
       end
    
       -- console.print(foundOn)
       -- Check if the item's greater affix count is below the required GA count
       if greater_affix_count < required_ga_count then
+         -- console.print('ga_count' , greater_affix_count)
+         -- console.print('required_ga_count' , required_ga_count)
          return false
       end
-      -- console.print(rarity)
+      -- console.print("gaCount",required_ga_count)
+      -- console.print("rarity",rarity)
    end
    return true
 end
