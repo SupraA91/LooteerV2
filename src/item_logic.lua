@@ -64,11 +64,11 @@ function ItemLogic.is_legendary_amulet(item)
  --offhand
  function ItemLogic.is_legendary_focus(item)
     local item_info = item:get_item_info()
-    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("offHandSorc")
+    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("offHandsSorc")
  end
  function ItemLogic.is_legendary_totem(item)
     local item_info = item:get_item_info()
-    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("offHandDruid")
+    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("offHandsDruid")
  end
 
 
