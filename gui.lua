@@ -26,6 +26,7 @@ gui.elements = {
       wepeonsTree = tree_node:new(1),
       oneHandedTree = tree_node:new(1),
       twoHandedTree = tree_node:new(1),
+      offHandsTree = tree_node:new(1),
       --armors
          legendary_helm_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_helm_slider")),
          legendary_chest_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_chest_slider")),
@@ -42,7 +43,11 @@ gui.elements = {
          unique_amulet_slider = slider_int:new(0, 4, 0, get_hash(plugin_label .. "_unique_amulet_slider")),
          legendary_ring_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_ring_slider")),
          unique_ring_slider = slider_int:new(0, 4, 0, get_hash(plugin_label .. "_unique_ring_slider")),
-      --wepeons
+      --offhand
+         legendary_focus_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_focus_slider")),
+         legendary_totem_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_totem_slider")),
+      
+         --wepeons
          --1h
          legendary_1h_mace_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_1h_mace_slider")),
          legendary_1h_sword_slider = slider_int:new(0, 3, 0, get_hash(plugin_label .. "_legendary_1h_sword_slider")),
@@ -211,8 +216,13 @@ function gui:render()
                      "Minimum GA's to consider picking up unique bows")
                      gui.elements.affix_settings.unique_crossbow_slider:render("Unique Crossbow GA Count",
                      "Minimum GA's to consider picking up unique crossbows")
-               
                end
+                  if gui.elements.affix_settings.offHandsTree:push("OffHands") then
+                     gui.elements.affix_settings.legendary_focus_slider:render("Legendary Focus GA Count",
+                     "Minimum GA's to consider picking up legendary Focuses")
+                     gui.elements.affix_settings.legendary_totem_slider:render("Legendary Totem GA Count",
+                     "Minimum GA's to consider picking up legendary Totems")
+                  end
             end
          end
       gui.elements.affix_settings.tree:pop()

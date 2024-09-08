@@ -38,6 +38,10 @@ local settings = {
    unique_gloves_ga_count = nil,
    unique_pants_ga_count = nil,
    unique_boots_ga_count = nil,
+   --offhand
+   legendary_focus_ga_count = nil,
+   legendary_totem_ga_count = nil,
+
    --wepeons
    --1h
    legendary_1h_mace_ga_count = nil,
@@ -101,7 +105,10 @@ function Settings.update()
       unique_gloves_ga_count = gui.elements.affix_settings.unique_gloves_slider:get(),
       unique_pants_ga_count = gui.elements.affix_settings.unique_pants_slider:get(),
       unique_boots_ga_count = gui.elements.affix_settings.unique_boots_slider:get(),
-      
+      --offhand
+      legendary_focus_ga_count = gui.elements.affix_settings.legendary_focus_slider:get(),
+      legendary_totem_ga_count = gui.elements.affix_settings.legendary_totem_slider:get(),
+
       --Wepeons Settings
          --1h
          legendary_1h_mace_ga_count = gui.elements.affix_settings.legendary_1h_mace_slider:get(),

@@ -172,6 +172,14 @@ function ItemManager.check_want_item(item, ignore_distance)
       elseif ItemLogic.is_unique_boots(item) and Settings.get().custom_toggle == true then
          required_ga_count = settings.unique_boots_ga_count
          foundOn = 'boots'
+      
+      --offhand
+      elseif ItemLogic.is_legendary_focus(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_focus_ga_count
+         foundOn = 'focus'
+      elseif ItemLogic.is_legendary_totem(item) and Settings.get().custom_toggle == true then
+         required_ga_count = settings.legendary_totem_ga_count
+         foundOn = 'totem'
 
       --Wepeons
       elseif ItemLogic.is_legendary_1h_mace(item) and Settings.get().custom_toggle == true then

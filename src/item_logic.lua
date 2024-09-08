@@ -46,11 +46,11 @@ function ItemLogic.is_legendary_amulet(item)
  end
  function ItemLogic.is_legendary_pants(item)
     local item_info = item:get_item_info()
-    return item_info:get_rarity() == 5 and (item_info:get_skin_name():find("LEG") or item_info:get_skin_name():find("Pants"))
+    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("LEG")
  end
  function ItemLogic.is_unique_pants(item)
     local item_info = item:get_item_info()
-    return item_info:get_rarity() == 6 and item_info:get_skin_name():find("LEG")
+    return item_info:get_rarity() == 6 and (item_info:get_skin_name():find("LEG") or item_info:get_skin_name():find("Pants"))
  end
  function ItemLogic.is_legendary_boots(item)
     local item_info = item:get_item_info()
@@ -61,6 +61,17 @@ function ItemLogic.is_legendary_amulet(item)
     return item_info:get_rarity() == 6 and item_info:get_skin_name():find("BTS")
  end
  
+ --offhand
+ function ItemLogic.is_legendary_focus(item)
+    local item_info = item:get_item_info()
+    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("offHandSorc")
+ end
+ function ItemLogic.is_legendary_totem(item)
+    local item_info = item:get_item_info()
+    return item_info:get_rarity() == 5 and item_info:get_skin_name():find("offHandDruid")
+ end
+
+
  --1Handed Wepeons
  function ItemLogic.is_legendary_1h_mace(item)
     local item_info = item:get_item_info()
