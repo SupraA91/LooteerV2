@@ -1,4 +1,4 @@
-local gui = require("gui")
+local gui = require("gui.gui")
 
 local Settings = {}
 

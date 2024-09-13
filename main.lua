@@ -1,7 +1,7 @@
 local Settings = require("src.settings")
 local ItemManager = require("src.item_manager")
 local Renderer = require("src.renderer")
-local GUI = require("gui")
+local GUI = require("gui.gui")
 local Utils = require("utils.utils")
 
 local function handle_loot(wanted_item)
