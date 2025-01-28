@@ -7,12 +7,12 @@ local ItemManager = {}
 
 -- Table to store item type patterns
 local item_type_patterns = {
-   sigil = { "Nightmare_Sigil", "S07_WitcherSigil" },
-   compass = { "S05_DungeonSigil_BSK" },
+   sigil = { "Nightmare_Sigil", "S07_WitcherSigil", "S07_DRLG_Sigil" },
+   compass = { "BSK_Sigil" },
    tribute = { "Undercity_Tribute" },
-   equipment = { "Base", "Amulet", "Ring" },
+   equipment = { "Base", "Amulet", "Ring", "Item_Cache_Tier" },
    quest = { "Global", "Glyph", "QST", "DGN", "pvp_currency", "S07_Witch_Bonus", "GamblingCurrency_Key" },
-   crafting = { "CraftingMaterial", "Tempering_Recipe", "S07_SocketableRecipe" },
+   crafting = { "CraftingMaterial", "Tempering_Recipe", "Item_Book_Generic" },
    cinders = { "Test_BloodMoon_Currency" },
    scroll = { "Scroll_Of" },
    rune = { "Generic_Rune", "S07_Socketable_"}
@@ -83,6 +83,10 @@ end
 
 function ItemManager.check_is_scroll(item)
    return ItemManager.check_item_type(item, "scroll")
+end
+
+function ItemManager.check_is_cache(item)
+   return ItemManager.check_item_type(item, "cache")
 end
 
 function ItemManager.check_is_rune(item)
