@@ -7,15 +7,15 @@ local ItemManager = {}
 
 -- Table to store item type patterns
 local item_type_patterns = {
-   sigil = { "Nightmare_Sigil" },
-   compass = { "BSK_Sigil" },
+   sigil = { "Nightmare_Sigil", "S07_WitcherSigil" },
+   compass = { "S05_DungeonSigil" },
    tribute = { "Undercity_Tribute" },
    equipment = { "Base", "Amulet", "Ring" },
-   quest = { "Global", "Glyph", "QST", "DGN", "pvp_currency" },
-   crafting = { "CraftingMaterial", "Tempering_Recipe" },
+   quest = { "Global", "Glyph", "QST", "DGN", "pvp_currency", "S07_Witch_Bonus", "GamblingCurrency_Key" },
+   crafting = { "CraftingMaterial", "Tempering_Recipe", "S07_SocketableRecipe" },
    cinders = { "Test_BloodMoon_Currency" },
    scroll = { "Scroll_Of" },
-   rune = { "Generic_Rune" }
+   rune = { "Generic_Rune", "S07_Socketable"}
 }
 
 -- Generic function to check item type

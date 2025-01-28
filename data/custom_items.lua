@@ -22,6 +22,7 @@ local custom_items = {
         [1882910] = "Profane Mindcage",
         [1489411] = "Trembling Hand",
         [1971857] = "Abyssal Scroll",
+        [2136706] = "Fugitive Head",
     },
     rare_elixirs = {
         [1856350] = "Elixir of Holy Bolts",
@@ -35,6 +36,7 @@ local custom_items = {
         [2072959] = "Seething Opal of Gold",
         [2072996] = "Seething Opal of Equipment",
         [2073002] = "Seething Opal of Torment",
+        [2145204] = "Draught of Whispers",
     },
     basic_elixirs = {
         [1841186] = "Elixir of Advantage",

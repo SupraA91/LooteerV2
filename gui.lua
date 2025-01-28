@@ -107,7 +107,7 @@ gui.elements = {
    },
 }
 function gui.render()
-   if not gui.elements.main_tree:push("Looter | Letrico | v1.2.3") then
+   if not gui.elements.main_tree:push("Looter | Letrico | v1.2.4") then
       return
    end
 
