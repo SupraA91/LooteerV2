@@ -10,9 +10,11 @@ local item_type_patterns = {
    sigil = { "Nightmare_Sigil", "S07_WitcherSigil", "S07_DRLG_Sigil" },
    compass = { "BSK_Sigil" },
    tribute = { "Undercity_Tribute" },
-   equipment = { "Base", "Amulet", "Ring", "Item_Cache_Tier" },
+   equipment = { "Base", "Amulet", "Ring" },
+   item_cache = { "Item_Cache" },
    quest = { "Global", "Glyph", "QST", "DGN", "pvp_currency", "S07_Witch_Bonus", "GamblingCurrency_Key" },
-   crafting = { "CraftingMaterial", "Tempering_Recipe", "Item_Book_Generic" },
+   crafting = { "CraftingMaterial" },
+   recipe = { "Tempering_Recipe", "Item_Book_Generic" },
    cinders = { "Test_BloodMoon_Currency" },
    scroll = { "Scroll_Of" },
    rune = { "Generic_Rune", "S07_Socketable_"}
@@ -81,6 +83,14 @@ function ItemManager.check_is_crafting(item)
    return ItemManager.check_item_type(item, "crafting")
 end
 
+function ItemManager.check_is_recipe(item)
+   return ItemManager.check_item_type(item, "recipe")
+end
+
+function ItemManager.check_is_item_cache(item)
+   return ItemManager.check_item_type(item, "item_cache")
+end
+
 function ItemManager.check_is_scroll(item)
    return ItemManager.check_item_type(item, "scroll")
 end
@@ -130,6 +140,8 @@ function ItemManager.check_want_item(item, ignore_distance)
    local is_cinders = settings.cinders and ItemManager.check_is_cinders(item)
    local is_crafting_item = settings.crafting_items and ItemManager.check_is_crafting(item)
    local is_rune = settings.rune and ItemManager.check_is_rune(item)
+   local is_recipe = settings.crafting_items and ItemManager.check_is_recipe(item)
+   local is_item_cache = ItemManager.check_is_item_cache(item)
 
    if is_event_item then
       -- If the item is crafting material or cinders, skip inventory and consumable checks
@@ -166,6 +178,14 @@ function ItemManager.check_want_item(item, ignore_distance)
                ItemManager.check_item_stack(item, id),
                item_info:get_stack_count()
             ) then
+         return true
+      end
+   elseif is_recipe then
+      if not Utils.is_inventory_full() then
+         return true
+      end
+   elseif is_item_cache then
+      if not Utils.is_inventory_full() then
          return true
       end
    elseif is_quest_item then
