@@ -1,6 +1,7 @@
 local plugin_label = "Looter (Pirated Edition) "
 local gui = {}
 local options = require("data.gui_options")
+local version = "v1.2.5"
 
 
 gui.elements = {
@@ -107,7 +108,7 @@ gui.elements = {
    },
 }
 function gui.render()
-   if not gui.elements.main_tree:push("Looter | Letrico | v1.2.4") then
+   if not gui.elements.main_tree:push("Looter | Letrico | " .. version) then
       return
    end
 

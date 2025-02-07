@@ -13,11 +13,11 @@ local item_type_patterns = {
    equipment = { "Base", "Amulet", "Ring" },
    item_cache = { "Item_Cache" },
    quest = { "Global", "Glyph", "QST", "DGN", "pvp_currency", "S07_Witch_Bonus", "GamblingCurrency_Key" },
-   crafting = { "CraftingMaterial" },
-   recipe = { "Tempering_Recipe", "Item_Book_Generic" },
+   crafting = { "CraftingMaterial", "Crafting_Legendary" },
+   recipe = { "Tempering_Recipe", "Item_Book_Generic", "Item_Book_Horadrim", "Test_Mount" },
    cinders = { "Test_BloodMoon_Currency" },
    scroll = { "Scroll_Of" },
-   rune = { "Generic_Rune", "S07_Socketable_"}
+   rune = { "Generic_Rune", "S07_Socketable"}
 }
 
 -- Generic function to check item type
@@ -179,6 +179,8 @@ function ItemManager.check_want_item(item, ignore_distance)
                item_info:get_stack_count()
             ) then
          return true
+      else
+         return false
       end
    elseif is_recipe then
       if not Utils.is_inventory_full() then
