@@ -30,14 +30,41 @@ local function main_pulse()
 
    if loot_priority == 0 then
       local wanted_item = ItemManager.get_nearby_item()
-      handle_loot(wanted_item)
+      if wanted_item then
+         Settings.get().looting = true
+         handle_loot(wanted_item)
+      else
+         Settings.get().looting = false
+      end
    elseif loot_priority == 1 then
       local best_item_data = ItemManager.get_best_item()
       if best_item_data then
+         Settings.get().looting = true
          handle_loot(best_item_data.Item)
+      else
+         Settings.get().looting = false
       end
    end
 end
+
+-- Set Global access for other plugins
+LooteerPlugin = {
+   getSettings = function (setting)
+      if Settings.get()[setting] then
+          return Settings.get()[setting]
+      else
+          return nil
+      end
+  end,
+  setSettings = function (setting, value)
+      if Settings.get()[setting] then
+          Settings.get()[setting] = value
+          return true
+      else
+          return false
+      end
+  end,
+}
 
 on_update(main_pulse)
 on_render_menu(GUI.render)

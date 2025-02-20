@@ -4,6 +4,7 @@ local Settings = {}
 
 local settings = {
    enabled = false,
+   looting = false,
    custom_toggle = false,
    isArmor = false ,
    behavior = 0,
