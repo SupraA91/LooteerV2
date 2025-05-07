@@ -47,7 +47,7 @@ function ItemManager.check_item_stack(item, id)
    elseif ItemManager.check_is_scroll(item) then
       stack = 20
    elseif CustomItems.boss_items[id] then
-      stack = 50
+      stack = 99
    elseif ItemManager.check_is_rune(item) then
       stack = 100
    end

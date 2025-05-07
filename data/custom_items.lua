@@ -24,8 +24,9 @@ local custom_items = {
         [1971857] = "Abyssal Scroll",
         [2136706] = "Fugitive Head",
         [2193876] = "Judicator's Mask",
-        [2194099] = "Betrayer's Hust",
+        [2194099] = "Betrayer's Husk",
         [2194097] = "Abhorrent Heart",
+        [2255243] = "Behelit",
     },
     rare_elixirs = {
         [1856350] = "Elixir of Holy Bolts",
