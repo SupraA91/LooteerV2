@@ -46,4 +46,8 @@ function Utils.is_socketable_inventory_full()
    return #get_local_player():get_socketable_items() == 33
 end
 
+function Utils.player_in_zone(zname)
+    return get_current_world():get_current_zone_name() == zname
+end
+
 return Utils
