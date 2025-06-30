@@ -3,15 +3,15 @@ local ItemManager = require("src.item_manager")
 local Renderer = require("src.renderer")
 local GUI = require("gui")
 local Utils = require("utils.utils")
-local explorerlite = require "core.explorerlite"
+
+-- CRITICAL: Make GUI available globally for other modules
+gui = GUI
 
 local function handle_loot(wanted_item)
    if wanted_item then
       if Utils.distance_to(wanted_item) > 2 then
          local item_position = wanted_item:get_position()
-         -- pathfinder.request_move(item_position)
-         explorerlite:set_custom_target(item_position)
-         explorerlite:move_to_target()
+         pathfinder.request_move(item_position)
       else
          interact_object(wanted_item)
       end
