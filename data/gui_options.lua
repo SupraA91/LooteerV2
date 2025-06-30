@@ -1,17 +1,23 @@
-local gui_options = {
-    rarities = {
-        "Common",
-        "Magic",
-        "Magic_2",
-        "Rare",
-        "Rare_2",
-        "Legendary",
-        "Unique",
-    },
-    behaviors = {
-        "Always",
-        "Orbwalk"
-    }
+local options = {}
+
+options.behaviors = {
+   "Always",
+   "Orbwalk"
 }
 
-return gui_options
+options.rarities = {
+   "Common",
+   "Magic", 
+   "Magic_2",
+   "Rare",
+   "Rare_2",
+   "Legendary",
+   "Unique"
+}
+
+options.loot_priorities = {
+   "Closest",
+   "Best Quality"
+}
+
+return options
